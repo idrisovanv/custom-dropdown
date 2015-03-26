@@ -1,0 +1,17 @@
+<div class="dropdown-wrap">
+    <div class="dropdown" ng-click="opened=!opened; hoverItem=0;"
+         ng-class="{opened:opened, correct:curItem==data.answer, wrong:curItem&& curItem!=data.answer}"
+         ng-mouseleave="opened=false">
+
+        <input type="text" ng-value="data.variants[curItem]" readonly="readonly" ng-keyup="onKey($event)"/>
+
+        <ul ng-show="opened">
+            <li ng-repeat="item in data.variants"
+                ng-click="$parent.curItem=$index"
+                ng-class="{hover:hoverItem==$index, cur:curItem==$index && $index!=0}"
+                ng-mouseenter="$parent.hoverItem=$index">
+                {{ item}}
+            </li>
+        </ul>
+    </div>
+</div>

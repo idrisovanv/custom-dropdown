@@ -1,0 +1,154 @@
+body {
+  margin: 100px;
+  font-family: Calibri;
+  font-size: 20px;
+  color: #333333;
+  p {
+    max-width: 700px;
+  }
+}
+
+.dropdown-wrap {
+  width: 155px;
+  height: 20px;
+  position: relative;
+  display: inline-block;
+
+  .dropdown {
+    width: 155px;
+    cursor: url(../img/cur.cur), pointer;
+    font-family: Calibri;
+    color: #333333;
+    font-size: 20px;
+    position: absolute;
+    box-shadow: 0px 0px 30px #fff;
+
+    * {
+      cursor: url(../img/cur.cur), pointer;
+    }
+
+    &:hover {
+      input {
+        border-color: #aaa;
+      }
+
+    }
+    select {
+      option {
+        display: none;
+        outline: none !important;
+      }
+    }
+    &.wrong {
+      input {
+        background-color: #f58e8e;
+        border-color: #f58e8e;
+        color: white;
+        &:focus{
+          border-color: #f58e8e;
+        }
+        &:hover {
+          border-color: #db7f7f;
+        }
+        &:active{
+          border-color: #aaa;
+        }
+
+      }
+      &:after {
+        background-position: 0 -6px;
+      }
+    }
+    &.correct {
+      input {
+        background-color: #add166;
+        border-color: #add166;
+        color: white;
+      }
+      &:after {
+        background-position: 0 -6px;
+      }
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      background: url(../img/sprite.png) no-repeat;
+      position: absolute;
+      width: 11px;
+      height: 6px;
+      top: 10px;
+      right: 8px;
+    }
+    &.opened {
+      input {
+        background-color: white;
+        color: #333333;
+        border-color: #aaa;
+        &:hover, &:focus{
+          border-color: #aaa;
+        }
+      }
+    }
+    input {
+      border: 1px solid #ccc;
+      width: 140px;
+      border-radius: 3px;
+      position: relative;
+      font-family: Calibri;
+      font-size: 20px;
+      padding: 0 7px 1px 7px;
+
+      &:active {
+        background-color: #f5f5f5;
+        border-color:#aaa;
+        color:#333333;
+      }
+
+      &:focus {
+        border-color: #aaa;
+        outline: none;
+      }
+
+    }
+    ul {
+      list-style-type: none;
+      border: 1px solid #aaa;
+      width: 155px;
+      border-radius: 3px;
+      margin: 3px 0;
+      padding: 0;
+      background-color: white;
+
+      li {
+        height: 26px;
+        position: relative;
+        padding: 2px 7px;
+        background-color: #edfad4;
+
+        &:first-child{
+          background-color: white;
+        }
+
+        &.cur {
+          background-color: white;
+          &:after {
+            content: '';
+            display: block;
+            background: url(../img/sprite.png) no-repeat;
+            background-position: 0 -12px;
+            position: absolute;
+            width: 18px;
+            height: 16px;
+            top: 5px;
+            right: 8px;
+          }
+        }
+        &.hover {
+          background-color: #ffffd9;
+        }
+      }
+    }
+
+  }
+}
